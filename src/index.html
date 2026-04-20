@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Swap our for actual link-->
+    <link rel="canonical" href="https://www.website.com/">
+
+    <meta name="description" content="Meta description for the page">
+    <meta name="keywords" content="">
+
+    <!--Social Media Display-->
+    <meta property="og:title" content="Title that shows up on google searches" />
+    <meta property="og:description" content="Meta description for the page" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.website.com/" />
+    <meta property="og:image" content="/images/social.jpg" />
+    <meta property="og:image:secure_url" content="/images/social.jpg" />
+
+    <!--Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v1">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Preload -->
+    <link rel="preload" as="image" href="/assets/logo-light.png">
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/dark.css">
+
+    <link rel="preload" as="image" href="/images/landing-1920w.webp" />
+
+    <!-- Loading in page specific CSS sheets from css block -->
+    <link rel="stylesheet" href="/css/critical.css" />
+    <link rel="stylesheet" href="/css/local.css">
+    <script type="text/javascript" src="node_modules/accessibility/dist/main.bundle.js"></script>
+
+    <!--Put analytics tag here at the bottom to prevent it from render blocking-->
+
+    <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
+    <title>
+
+        West Georgia Business Showcase | Pixel Perfect Websites | Denver, CO
+
+    </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.addEventListener('load', function () {
+            new Accessibility();
+        }, false);
+
+    </script>
+
+
+    <!--Screen reader skip main nav-->
+    <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+    <!-- ============================================ -->
+    <!--                 Navigation                   -->
+    <!-- ============================================ -->
+
+    <header id="cs-navigation">
+
+        <div class="cs-container">
+
+            <!-- Logo -->
+            <a href="/" class="cs-logo" aria-label="Return to Coweta Business Showcase Home page">
+                <img src="assets/images/west-ga-logo.png" alt=" West Georgia Business Showcase" width="210" height="29"
+                    decoding="async">
+            </a>
+
+
+            <!-- Navigation -->
+            <nav class="cs-nav" aria-label="main navigation">
+
+                <!-- Mobile Toggle -->
+                <button class="cs-toggle" aria-label="mobile menu toggle" aria-expanded="false"
+                    aria-controls="cs-ul-wrapper" aria-haspopup="menu">
+                    <span class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1"></span>
+                        <span class="cs-line cs-line2"></span>
+                        <span class="cs-line cs-line3"></span>
+                    </span>
+                </button>
+
+                <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                    <ul class="cs-ul">
+
+                        <li class="cs-li">
+                            <a href="/" class="cs-li-link cs-active">Home</a>
+                        </li>
+
+                        <!-- Region Dropdown -->
+                        <li class="cs-li cs-dropdown">
+                            <button class="cs-li-link cs-dropdown-toggle" aria-haspopup="menu" aria-expanded="false"
+                                id="counties-dropdown-toggle">
+                                Region
+                                <img class="cs-drop-icon"
+                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt=""
+                                    width="15" height="15" decoding="async">
+                            </button>
+
+                            <ul class="cs-drop-ul" aria-labelledby="counties-dropdown-toggle">
+                                <li class="cs-drop-li"><a href="/coweta/" class="cs-li-link cs-drop-link">Coweta
+                                        County</a></li>
+                                <li class="cs-drop-li"><a href="/fayette/" class="cs-li-link cs-drop-link">Fayette
+                                        County</a></li>
+                                <li class="cs-drop-li"><a href="/carroll/" class="cs-li-link cs-drop-link">Carroll
+                                        County</a></li>
+                                <li class="cs-drop-li"><a href="/douglas/" class="cs-li-link cs-drop-link">Douglas
+                                        County</a></li>
+                                <li class="cs-drop-li"><a href="/troup/" class="cs-li-link cs-drop-link">Troup
+                                        County</a></li>
+                                <!-- <li class="cs-drop-li"><a href="/west-ga/" class="cs-li-link cs-drop-link">West GA
+                                        (All)</a></li> -->
+                            </ul>
+                        </li>
+
+
+                        <!-- Directory Dropdown -->
+                        <li class="cs-li cs-dropdown">
+                            <button class="cs-li-link cs-dropdown-toggle" aria-haspopup="menu" aria-expanded="false"
+                                id="directory-dropdown-toggle">
+                                Directory
+                                <img class="cs-drop-icon"
+                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt=""
+                                    width="15" height="15" decoding="async">
+                            </button>
+
+                            <ul class="cs-drop-ul" aria-labelledby="directory-dropdown-toggle">
+
+                                <!-- County Directories -->
+                                <li class="cs-drop-li"><a href="/coweta-directory/"
+                                        class="cs-li-link cs-drop-link">Coweta County Directory</a></li>
+                                <li class="cs-drop-li"><a href="/carroll-directory/"
+                                        class="cs-li-link cs-drop-link">Carroll County Directory</a></li>
+                                <li class="cs-drop-li"><a href="/douglas-directory/"
+                                        class="cs-li-link cs-drop-link">Douglas County Directory</a></li>
+                                <li class="cs-drop-li"><a href="/fayette-directory/"
+                                        class="cs-li-link cs-drop-link">Fayette County Directory</a></li>
+                                <li class="cs-drop-li"><a href="/troup-directory/" class="cs-li-link cs-drop-link">Troup
+                                        County Directory</a></li>
+
+                            </ul>
+                        </li>
+
+                        <!-- Events Dropdown -->
+                        <li class="cs-li cs-dropdown">
+                            <button class="cs-li-link cs-dropdown-toggle" aria-haspopup="menu" aria-expanded="false"
+                                id="events-dropdown-toggle">
+                                Events
+                                <img class="cs-drop-icon"
+                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt=""
+                                    width="15" height="15" decoding="async">
+                            </button>
+
+                            <!-- County Events -->
+                            <ul class="cs-drop-ul" aria-labelledby="events-dropdown-toggle">
+                                <li class="cs-drop-li"><a href="/coweta-events/" class="cs-li-link cs-drop-link">Coweta
+                                        County Events</a></li>
+                                <li class="cs-drop-li"><a href="/carroll-events/"
+                                        class="cs-li-link cs-drop-link">Carroll County Events</a></li>
+                                <li class="cs-drop-li"><a href="/douglas-events/"
+                                        class="cs-li-link cs-drop-link">Douglas County Events</a></li>
+                                <li class="cs-drop-li"><a href="/fayette-events/"
+                                        class="cs-li-link cs-drop-link">Fayette County Events</a></li>
+                                <li class="cs-drop-li"><a href="/troup-events/" class="cs-li-link cs-drop-link">Troup
+                                        County Events</a></li>
+
+                            </ul>
+                        </li>
+
+
+                        <!-- 
+                        <li class="cs-li">
+                            <a href="/spotlights/" class="cs-li-link">Spotlights</a>
+                        </li> -->
+
+
+
+                        <li class="cs-li">
+                            <a href="/get-featured/" class="cs-li-link cs-featured-btn">Get Featured</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Optional Contact + Social -->
+            <div class="cs-contact-group">
+                <a href="tel:+1-555-555-5555" class="cs-phone">
+                    <img class="cs-phone-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-1a.svg"
+                        alt="" width="24" height="24" decoding="async">
+                    (555) 555‑5555
+                </a>
+
+                <div class="cs-social">
+                    <a href="#" class="cs-social-link" aria-label="Facebook">
+                        <img class="cs-social-icon"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/facebook-1a.svg" width="12"
+                            height="12">
+                    </a>
+                    <a href="#" class="cs-social-link" aria-label="Instagram">
+                        <img class="cs-social-icon"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/instagram1a.svg" width="12"
+                            height="12">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+<div class="cs-weather-square">
+    <a class="weatherwidget-io" 
+       href="https://forecast7.com/en/33d38n84d80/newnan/?unit=us" 
+       data-label_1="West Georgia" 
+       data-label_2="Weather Update" 
+       data-theme="original">
+       West Georgia Weather Update
+    </a>
+</div>
+    <script>
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+    </script>
+
+    <main id="main"><!-- Enter html code below -->
+
+
+        <!-- ============================================ -->
+        <!--                    Hero                      -->
+        <!-- ============================================ -->
+
+        <section id="hero-1946" class="cs-hero-rotator">
+
+            <!-- Arrows -->
+            <div class="cs-hero-arrows">
+                <button class="cs-arrow cs-prev">‹</button>
+                <button class="cs-arrow cs-next">›</button>
+            </div>
+
+            <!-- Slide 1 -->
+            <div class="billboard-frame">
+                <div class="cs-slide active">
+                    <div class="cs-container">
+                        <div class="cs-content">
+                            <h2 class="cs-title">Need Junk Removed?</h2>
+                            <div class="cs-flex">
+                                <p class="cs-text">Fast, affordable junk removal in Coweta & surrounding areas. Send a
+                                    picture for a quick quote.</p>
+                                <a href="https://cippiehaulsit.com/contact/" class="cs-button-solid">Book Now</a>
+                            </div>
+                        </div>
+
+                        <picture class="cs-picture">
+                            <img src="assets/images/cippie-hauls-it.webp" alt="">
+                        </picture>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Slide 2 -->
+            <div class="billboard-frame">
+                <div class="cs-slide s2">
+                    <div class="cs-container">
+                        <div class="cs-content">
+                            <h2 class="cs-title">Rent This Space</h2>
+                            <div class="cs-flex">
+                                <p class="cs-text">Promote your business to thousands of West Georgia residents.</p>
+                                <a href="/get-featured/" class="cs-button-solid">Get Featured</a>
+                            </div>
+                        </div>
+
+                        <picture class="cs-picture">
+                            <img src="assets/images/rent-space.webp" alt="">
+                        </picture>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="billboard-frame">
+                <div class="cs-slide s2">
+                    <div class="cs-container">
+                        <div class="cs-content">
+                            <h2 class="cs-title">Rent This Space</h2>
+                            <div class="cs-flex">
+                                <p class="cs-text">Promote your business to thousands of West Georgia residents.</p>
+                                <a href="/get-featured/" class="cs-button-solid">Get Featured</a>
+                            </div>
+                        </div>
+
+                        <picture class="cs-picture">
+                            <img src="assets/images/rent-space.webp" alt="">
+                        </picture>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="billboard-frame">
+                <div class="cs-slide s2">
+                    <div class="cs-container">
+                        <div class="cs-content">
+                            <h2 class="cs-title">Rent This Space</h2>
+                            <div class="cs-flex">
+                                <p class="cs-text">Promote your business to thousands of West Georgia residents.</p>
+                                <a href="/get-featured/" class="cs-button-solid">Get Featured</a>
+                            </div>
+                        </div>
+
+                        <picture class="cs-picture">
+                            <img src="assets/images/rent-space.webp" alt="">
+                        </picture>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="billboard-frame">
+                <div class="cs-slide s2">
+                    <div class="cs-container">
+                        <div class="cs-content">
+                            <h2 class="cs-title">Rent This Space</h2>
+                            <div class="cs-flex">
+                                <p class="cs-text">Promote your business to thousands of West Georgia residents.</p>
+                                <a href="/get-featured/" class="cs-button-solid">Get Featured</a>
+                            </div>
+                        </div>
+
+                        <picture class="cs-picture">
+                            <img src="assets/images/rent-space.webp" alt="">
+                        </picture>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <script>
+            const slides = document.querySelectorAll('.cs-slide');
+            const total = slides.length;
+
+            // Start on a random slide
+            let current = Math.floor(Math.random() * total);
+
+            // Show that random slide immediately
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+            }
+
+            showSlide(current);
+
+            // Next slide
+            function nextSlide() {
+                current = (current + 1) % total;
+                showSlide(current);
+            }
+
+            // Previous slide
+            function prevSlide() {
+                current = (current - 1 + total) % total;
+                showSlide(current);
+            }
+
+            // Arrow click events
+            document.querySelector('.cs-next').addEventListener('click', () => {
+                nextSlide();
+                resetAuto();
+            });
+
+            document.querySelector('.cs-prev').addEventListener('click', () => {
+                prevSlide();
+                resetAuto();
+            });
+
+            // Auto-rotation
+            let autoPlay;
+
+            function startAuto() {
+                autoPlay = setInterval(nextSlide, 8000);
+            }
+
+            function resetAuto() {
+                clearInterval(autoPlay);
+                startAuto();
+            }
+
+            startAuto();
+        </script>
+
+
+
+
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <script>
+            if (window.netlifyIdentity) {
+                window
+                    .netlifyIdentity
+                    .on('init', (user) => {
+                        if (!user) {
+                            window
+                                .netlifyIdentity
+                                .on('login', () => {
+                                    document.location.href = '/admin/';
+                                });
+                        }
+                    });
+            }
+        </script>
+    </main>
+
+    <!-- ============================================ -->
+    <!--                   Footer                     -->
+    <!-- ============================================ -->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="left-section">
+                <a class="logo" href="/"><img loading="lazy" decoding="async" src="/assets/images/logo-light.png"
+                        alt="logo" width="264" height="78"></a>
+                <p>
+                    Extra content if you need it, if not you can delete this whole p tag. I usually do.
+                </p>
+            </div>
+            <div class="right-section">
+                <div class="lists">
+                    <ul>
+                        <li>
+                            <h2>Information</h2>
+                        </li>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/about">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/projects">Projects</a>
+                        </li>
+                        <li>
+                            <a href="/testimonials">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h2>Services</h2>
+                        </li>
+                        <li>Service1</li>
+                        <li>Service2</li>
+                        <li>Service4</li>
+                        <li>Service5</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h2>Contact</h2>
+                        </li>
+                        <li>
+                            <a href="/contact">First Address Line<br>Denver CO 80206</a>
+                        </li>
+                        <li>
+                            <a href="tel:555-779-4407">T: (555) 779-4407</a>
+                        </li>
+                        <li>
+                            <a href="mailto:email@email.com">Click to Email</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="credit">
+            <span>Designed and Hand Coded by</span>
+            <a href="" target="_blank" rel="noopener">Your Company Name</a>
+            <span class="copyright"> Copyright 2021 - Present</span>
+        </div>
+    </footer>
+
+    <script defer src="/assets/js/nav.js"></script>
+    <script defer src="/assets/js/dark.js"></script>
+
+    <!--
+        This script adds a class to the body after scrolling 100px
+        and we used these body.scroll styles to create some on scroll 
+        animations with the navbar
+    -->
+    <script defer>
+        document.addEventListener('scroll', (e) => {
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 100) {
+                document
+                    .querySelector('body')
+                    .classList
+                    .add('scroll')
+            } else {
+                document
+                    .querySelector('body')
+                    .classList
+                    .remove('scroll')
+            }
+        });
+    </script>
+
+</body>
+
+</html>
