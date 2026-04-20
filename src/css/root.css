@@ -862,6 +862,7 @@
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 1024px) {
   body.scroll #cs-navigation {
+    
     width: 100%;
     max-width: 100%;
     border-radius: 0;
@@ -869,6 +870,7 @@
   }
 
   #cs-navigation {
+    
     width: 94%;
     max-width: 90rem;
     height: 6rem;

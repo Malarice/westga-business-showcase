@@ -1,15 +1,44 @@
- .cs-weather-square {
-    margin-top: 150px;   /* adjust to move it down */
-    margin-bottom: -10rem; /* adjust to move it up */
+.cs-weather-square {
+    width: 70px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 12px;
+    overflow: hidden; /* Clips the parts of the widget that don't fit */
+    flex-shrink: 0;
+    margin-left: 10px;
+    position: relative;
+    margin-bottom: -50px;
+    padding-bottom: 20px;
+    top: -25px;
+    left: -40px;
 }
+
+/* This targets the widget once the script loads it */
+  
+.cs-weather-square .weatherwidget-io {
+    min-width: 160px !important; /* Give it enough room to breathe internally */
+ 
+    position: absolute;
+    transform: scale(0.65); /* Shrinks the widget to fit the 110px box */
+  transform-origin: top center; /* Keeps it centered while scaling */
+height: 180px !important;
+margin-top: 75px;
+top: -10px;
+
+    border-radius: 20px;
+}
+
+
+
 /* ------------------------------ */
 /* HERO BASE STYLES (Stitch 1946) */
 /* ------------------------------ */
 
 @media only screen and (min-width: 0rem) {
   #hero-1946 {
-    margin-bottom: 10rem;
-    margin-top: 10rem;
     
  
     overflow: hidden;
@@ -52,6 +81,10 @@
   }
 
   #hero-1946 .cs-title {
+
+  margin-top: 25rem;
+    
+
     font-size: clamp(2.438rem, 5vw, 3.813rem);
   }
 
@@ -213,6 +246,7 @@
 
 /* Each slide */
 .cs-slide {
+    
  
     position: absolute;
     inset: 0;
@@ -351,7 +385,7 @@
 
   /* Fix arrows */
   .cs-hero-arrows {
-      top: 55%;                 /* true center */
+      top: 52%;                 /* true center */
       transform: translateY(-50%);
       padding: 0 1rem;
   }
