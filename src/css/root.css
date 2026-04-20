@@ -1,11 +1,6 @@
 
 
- 
- 
-
-
-
-/*-- -------------------------- -->
+ /*-- -------------------------- -->
 <---        Core Styles         -->
 <--- -------------------------- -*/
 /* Mobile */
@@ -926,8 +921,8 @@
   }
 
   #cs-navigation .cs-logo img {
-    width: 15vh;
-    height: 10vh;
+    width: 100%;
+    height: auto;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
   }
