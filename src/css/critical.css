@@ -1,412 +1,111 @@
-.cs-weather-square {
-    width: 70px;
-    height: 80px;
+/* ================================
+   HERO SECTION
+================================ */
+#cs-hero-search {
+    width: 100%;
+    padding: 7rem 1rem 6rem; /* balanced height */
+    background: var(--bodyTextColorWhite); /* soft gold or your brand color */
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-  
-    border-radius: 12px;
-    overflow: hidden; /* Clips the parts of the widget that don't fit */
-    flex-shrink: 0;
-    margin-left: 10px;
-    position: relative;
-    margin-bottom: -50px;
-    padding-bottom: 20px;
-    top: -25px;
-    left: -40px;
 }
 
-/* This targets the widget once the script loads it */
-  
-.cs-weather-square .weatherwidget-io {
-    min-width: 160px !important; /* Give it enough room to breathe internally */
- 
-    position: absolute;
-    transform: scale(0.65); /* Shrinks the widget to fit the 110px box */
-  transform-origin: top center; /* Keeps it centered while scaling */
-height: 180px !important;
-margin-top: 75px;
-top: -10px;
-
-    border-radius: 20px;
+#cs-hero-search .cs-container {
+    max-width: 900px;
+    margin: 100px auto;
 }
 
-
-
-/* ------------------------------ */
-/* HERO BASE STYLES (Stitch 1946) */
-/* ------------------------------ */
-
-@media only screen and (min-width: 0rem) {
-  #hero-1946 {
-    
- 
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    min-height: clamp(35rem, 80vh, 55rem);
- 
-    background-size: contain;
-  }
-  .hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+/* Title */
+.cs-hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--primary);
 }
 
-  #hero-1946 .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  #hero-1946 .cs-content {
-    text-align: center;
-    width: 100%;
-    margin-bottom: clamp(2.5rem, 5vw, 3.25rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  #hero-1946 .cs-title {
-
-  margin-top: 25rem;
-    
-
-    font-size: clamp(2.438rem, 5vw, 3.813rem);
-  }
-
-  #hero-1946 .cs-text {
-    margin-bottom: 1.25rem;
-  }
-
-  #hero-1946 .cs-button-solid {
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    min-width: 9.375rem;
-    padding: 0 clamp(2rem, 4vw, 3rem);
-    background-color: var(--primaryDark);
-    color: var(--bodyTextColorWhite);
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 10px;
-  }
-
-  #hero-1946 .cs-button-solid:hover {
-    background-color: #000;
-    color: #fff;
-  }
-
-#hero-1946 .cs-picture {
-    width: 100%;
-    height: clamp(17.5rem, 58.6vw, 31.875rem); /* consistent aspect ratio */
-    position: relative;
-    
-    object-fit: cover; /* forces uniform cropping */
-    overflow: hidden; /* important */
-}
-
-#hero-1946 .cs-picture img {
-    width: 100%;
-    height: 100%;
-    object-position: center; /* keeps the subject centered */
-    border-radius: 2.5rem;
-    position: absolute;
-    inset: 0;
-}
-
-@media only screen and (max-width: 48rem) { /* 768px */
-#hero-1946 .cs-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* forces uniform cropping */
-    object-position: center; /* keeps the subject centered */
-    border-radius: 2.5rem;
-    position: absolute;
-    inset: 0;
-}
-
-  #hero-1946 .cs-content {
-    margin-top: -10rem;
-    text-align: center;
-    width: 100%;
-    margin-bottom: clamp(2.5rem, 5vw, 3.25rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-  }
-}
-
-  #hero-1946 .cs-card-group {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: clamp(1rem, 2vw, 1.25rem);
-  }
-
-  #hero-1946 .cs-item {
-    list-style: none;
-    padding: clamp(1.5rem, 3vw, 2rem);
-    background-color: #F7F7F7;
-    border-radius: 1.25rem;
-    grid-column: span 12;
-    text-align: center;
-    transition: border-color 0.3s;
-  }
-
-  #hero-1946 .cs-item:hover {
-    border-color: var(--primary);
-  }
-
-  #hero-1946 .cs-h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    color: var(--headerColor);
-    transition: color 0.3s;
-  }
-
-  #hero-1946 .cs-item-text {
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
+/* Subtitle */
+.cs-hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 2.5rem;
     color: var(--bodyTextColor);
-  }
 }
 
-/* Tablet */
-@media only screen and (min-width: 48rem) {
-  #hero-1946 .cs-item {
-    grid-column: span 6;
-    text-align: left;
-  }
-}
-
-/* Desktop */
-@media only screen and (min-width: 64rem) {
-  #hero-1946 .cs-item {
-    grid-column: span 3;
-  }
-  
-}
-
-/* Large Desktop */
-@media only screen and (min-width: 81.25rem) {
-  #hero-1946 .cs-content {
-    text-align: left;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1.25rem;
-  }
-
-  #hero-1946 .cs-flex {
-    width: 50%;
-    max-width: 39.375rem;
-  }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #hero-1946 {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  body.dark-mode #hero-1946 .cs-title,
-  body.dark-mode #hero-1946 .cs-text,
-  body.dark-mode #hero-1946 .cs-h3,
-  body.dark-mode #hero-1946 .cs-item-text {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #hero-1946 .cs-item {
-    background-color: var(--medium);
-  }
-}
-
-/* ------------------------------ */
-/* ROTATING SLIDER (JS-POWERED)   */
-/* ------------------------------ */
-
-.cs-hero-rotator {
-    position: relative;
-    overflow: hidden;
-    min-height: clamp(35rem, 80vh, 55rem);
-}
-
-/* Each slide */
-.cs-slide {
-    
- 
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-}
-
-.cs-slide.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* ------------------------------ */
-/* ARROWS                         */
-/* ------------------------------ */
-
-.cs-hero-arrows {
-    position: absolute;
-    top: 60%;
-    left: 0%;
-    right: 0;
+/* ================================
+   SEARCH BAR
+================================ */
+.cs-search-form {
     width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    pointer-events: none;
-    z-index: 10;
+    align-items: center;
+    background: #fff;
+    border-radius: 50px;
+    padding: 0.85rem 1.25rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-.cs-arrow {
-    margin-left: 10rem;
-    margin-right: 10rem;
-        pointer-events: auto;
-    background: rgba(0,0,0,0.45);
-    color: #fff;
+.cs-search-input {
+    flex: 1;
     border: none;
-    font-size: 2.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    outline: none;
+    background: transparent;
+    color: var(--headerColor);
+}
+
+.cs-search-btn {
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
-.cs-arrow:hover {
-    background: rgba(0,0,0,0.75);
+/* ================================
+   DARK MODE
+================================ */
+body.dark-mode #cs-hero-search {
+    background: var(--dark); /* clean dark background */
 }
 
-.cs-prev { left: 1rem; }
-.cs-next { right: 1rem; }
-/* ------------------------------ */
-/* MOBILE ARROW FIX               */
-/* ------------------------------ */
+body.dark-mode .cs-hero-title,
+body.dark-mode .cs-hero-subtitle {
+    color: var(--);
+}
 
+body.dark-mode .cs-search-form {
+    background: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .cs-search-input {
+    color: var(--bodyTextColorWhite);
+}
+
+body.dark-mode .cs-search-btn {
+    background: var(--bodyTextColorWhite);
+}
+
+/* ================================
+   MOBILE
+================================ */
 @media (max-width: 600px) {
+    #cs-hero-search {
+        padding: 6rem 1rem 5rem; /* slightly shorter on mobile */
+    }
 
-  .cs-hero-arrows {
-      top: 55%; /* center vertically */
-      transform: translateY(-50%);
-      padding: 0 1rem; /* keep arrows inside the screen */
-  }
+    .cs-search-form {
+        padding: 0.7rem 1rem;
+    }
 
-  .cs-arrow {
-      font-size: 1.5rem; /* smaller arrows */
-      padding: 0.25rem 0.5rem;
-      margin-left: 0;
-      margin-right: 0;
-      background: rgba(0,0,0,0.55);
-  }
-
-  .cs-prev {
-      left: 0.5rem;
-  }
-
-  .cs-next {
-      right: 0.5rem;
-  }
-  .cs-hero-rotator {
-    position: relative;
-    overflow: hidden;
-    min-height: clamp(35rem, 80vh, 55rem);
+    .cs-search-btn {
+        padding: 0.6rem 1rem;
+    }
 }
 
-/* Each slide */
-.cs-slide {
- margin-top: -17rem;
- padding-top: -10rem;
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-}
-
-.cs-slide.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-}
-/* ------------------------------ */
-/* MOBILE + TABLET FIXES          */
-/* ------------------------------ */
-
-@media (max-width: 768px) {
-
-  /* Fix slide position */
-  .cs-slide {
-      margin-top: 0;          /* remove negative offset */
-      padding-top: 0;         /* remove invalid padding */
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 1.2s ease-in-out;
-      pointer-events: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;   /* centers content vertically */
-      align-items: center;       /* centers horizontally */
-  }
-
-  .cs-slide.active {
-      opacity: 1;
-      pointer-events: auto;
-  }
-
-  /* Fix hero height consistency */
-  .cs-hero-rotator {
-      min-height: 32rem;   /* slightly smaller for mobile */
-      height: auto;
-  }
-
-  /* Fix arrows */
-  .cs-hero-arrows {
-      top: 52%;                 /* true center */
-      transform: translateY(-50%);
-      padding: 0 1rem;
-  }
-
-  .cs-arrow {
-      font-size: 1.5rem;
-      padding: 0.25rem 0.5rem;
-      background: rgba(0,0,0,0.55);
-      margin: 0;
-  }
-
-  .cs-prev { left: 0.5rem; }
-  .cs-next { right: 0.5rem; }
-
-  /* Fix hero image scaling */
-  #hero-1946 .cs-picture {
-      height: 20rem;            /* mobile-friendly height */
-  }
-
-  #hero-1946 .cs-picture img {
-      object-fit: contain;
-      object-position: center;
-  }
-}
+                          

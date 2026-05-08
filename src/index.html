@@ -68,27 +68,49 @@
     <!--                 Navigation                   -->
     <!-- ============================================ -->
 
-    <header id="cs-navigation">
+<header id="cs-navigation">
+    <div class="cs-container">
 
-        <div class="cs-container">
+        <!-- Logo -->
+        <a href="/" class="cs-logo" aria-label="Return to Coweta Business Showcase Home page">
+            <img src="assets/images/west-ga-logo.png" alt="West Georgia Business Showcase" decoding="async">
+        </a>
 
-            <!-- Logo -->
-            <a href="/" class="cs-logo" aria-label="Return to Coweta Business Showcase Home page">
-                <img src="assets/images/west-ga-logo.png" alt=" West Georgia Business Showcase" width="210" height="29"
-                    decoding="async">
-            </a>
-<div class="cs-weather-square">
-    <a class="weatherwidget-io" 
-       href="https://forecast7.com/en/33d38n84d80/newnan/?unit=us" 
-       data-label_1="West Georgia" 
-       data-label_2="Weather Update" 
-       data-theme="original">
-       West Georgia Weather Update
-    </a>
-</div>
-    <script>
-        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
-    </script>
+        <!-- Mini Weather (fixed + aligned) -->
+        <div class="cs-weather-mini">
+            <span class="cs-weather-icon">⛅</span>
+            <span class="cs-weather-temp">--°F</span>
+        </div>
+
+<script>
+async function updateWeather() {
+    try {
+        // Newnan, GA coordinates
+        const lat = 33.3807;
+        const lon = -84.7997;
+
+        // Force Fahrenheit with temperature_unit=fahrenheit
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=fahrenheit`;
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const temp = Math.round(data.current_weather.temperature);
+
+        document.querySelector(".cs-weather-temp").textContent = temp + "°F";
+    } catch (e) {
+        console.log("Weather error:", e);
+    }
+}
+
+// Run immediately
+updateWeather();
+
+// Update every 10 minutes
+setInterval(updateWeather, 600000);
+</script>
+
+
 
             <!-- Navigation -->
             <nav class="cs-nav" aria-label="main navigation">
@@ -211,11 +233,11 @@
                 <a href="tel:+1-555-555-5555" class="cs-phone">
                     <img class="cs-phone-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-1a.svg"
                         alt="" width="24" height="24" decoding="async">
-                    (555) 555‑5555
+                    (770) 376‑5421
                 </a>
 
                 <div class="cs-social">
-                    <a href="#" class="cs-social-link" aria-label="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=61567431890168" class="cs-social-link" aria-label="Facebook">
                         <img class="cs-social-icon"
                             src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/facebook-1a.svg" width="12"
                             height="12">
@@ -227,7 +249,17 @@
                     </a>
                 </div>
             </div>
-
+            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+            <button id="dark-mode-toggle" aria-label="dark mode toggle" aria-pressed="false">
+                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"
+                    style="enable-background:new 0 0 480 480" xml:space="preserve" aria-hidden="true">
+                    <path
+                        d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z" />
+                </svg>
+                <img class="cs-sun" aria-hidden="true"
+                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt=""
+                    width="15" height="15">
+            </button>
         </div>
     </header>
 
@@ -235,127 +267,67 @@
     <main id="main"><!-- Enter html code below -->
 
 
-        <!-- ============================================ -->
-        <!--                    Hero                      -->
-        <!-- ============================================ -->
+  <section id="cs-hero-search">
+    <div class="cs-container">
 
-        <section id="hero-1946" class="cs-hero-rotator">
+        <h1 class="cs-hero-title">
+            Discover West Georgia Businesses
+        </h1>
 
-            <!-- Arrows -->
-            <div class="cs-hero-arrows">
-                <button class="cs-arrow cs-prev">‹</button>
-                <button class="cs-arrow cs-next">›</button>
-            </div>
+        <p class="cs-hero-subtitle">
+            Search local shops, services, events, and more across Coweta & surrounding counties.
+        </p>
 
-            <!-- Slide 1 -->
-            <div class="billboard-frame">
-                <div class="cs-slide active">
-                    <div class="cs-container">
-                        <div class="cs-content">
-                            <h2 class="cs-title">Need Junk Removed?</h2>
-                            <div class="cs-flex">
-                                <p class="cs-text">Fast, affordable junk removal in Coweta & surrounding areas. Send a
-                                    picture for a quick quote.</p>
-                                <a href="https://cippiehaulsit.com/contact/" class="cs-button-solid">Book Now</a>
-                            </div>
-                        </div>
+      <form id="searchForm" class="cs-search-form">
+    <input 
+        id="searchInput"
+        type="text" 
+        name="q" 
+        class="cs-search-input" 
+        placeholder="Search for a business, service, or category..."
+    >
+    <button class="cs-search-btn" aria-label="Search">
+        🔍
+    </button>
+</form>
+<script>
+  const form = document.getElementById("searchForm");
+  const input = document.getElementById("searchInput");
+  const resultsDiv = document.getElementById("results");
 
-                        <picture class="cs-picture">
-                            <img src="assets/images/cippie-hauls-it.webp" alt="">
-                        </picture>
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // stop page reload
 
-                    </div>
-                </div>
-            </div>
+    const q = input.value.trim();
+    if (!q) return;
 
+    const res = await fetch(`/.netlify/functions/search?q=${encodeURIComponent(q)}`);
+    const data = await res.json();
 
-            <!-- Slide 2 -->
-            <div class="billboard-frame">
-                <div class="cs-slide s2">
-                    <div class="cs-container">
-                        <div class="cs-content">
-                            <h2 class="cs-title">Rent This Space</h2>
-                            <div class="cs-flex">
-                                <p class="cs-text">Promote your business to thousands of West Georgia residents.</p>
-                                <a href="/get-featured/" class="cs-button-solid">Get Featured</a>
-                            </div>
-                        </div>
+    resultsDiv.innerHTML = data.results
+      .map(biz => `
+        <div class="biz-card">
+          <h3>${biz.name}</h3>
+          <p>${biz.category}</p>
+          <p>${biz.city}</p>
+        </div>
+      `)
+      .join("");
+  });
+</script>
 
-                        <picture class="cs-picture">
-                            <img src="assets/images/rent-space.webp" alt="">
-                        </picture>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="billboard-frame">
-                <div class="cs-slide s2">
-                    <div class="cs-container">
-                        <div class="cs-content">
-                            <h2 class="cs-title">Rent This Space</h2>
-                            <div class="cs-flex">
-                                <p class="cs-text">Promote your business to thousands of West Georgia residents.</p>
-                                <a href="/get-featured/" class="cs-button-solid">Get Featured</a>
-                            </div>
-                        </div>
-
-                        <picture class="cs-picture">
-                            <img src="assets/images/rent-space.webp" alt="">
-                        </picture>
+<div id="results"></div>
 
 
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="billboard-frame">
-                <div class="cs-slide s2">
-                    <div class="cs-container">
-                        <div class="cs-content">
-                            <h2 class="cs-title">Rent This Space</h2>
-                            <div class="cs-flex">
-                                <p class="cs-text">Promote your business to thousands of West Georgia residents.</p>
-                                <a href="/get-featured/" class="cs-button-solid">Get Featured</a>
-                            </div>
-                        </div>
-
-                        <picture class="cs-picture">
-                            <img src="assets/images/rent-space.webp" alt="">
-                        </picture>
+    </div>
+</section>
 
 
-                    </div>
-                </div>
-            </div>
 
-            <!-- Slide 5 -->
-            <div class="billboard-frame">
-                <div class="cs-slide s2">
-                    <div class="cs-container">
-                        <div class="cs-content">
-                            <h2 class="cs-title">Rent This Space</h2>
-                            <div class="cs-flex">
-                                <p class="cs-text">Promote your business to thousands of West Georgia residents.</p>
-                                <a href="/get-featured/" class="cs-button-solid">Get Featured</a>
-                            </div>
-                        </div>
+                                
 
-                        <picture class="cs-picture">
-                            <img src="assets/images/rent-space.webp" alt="">
-                        </picture>
-
-
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
+                                
+                                
         <script>
             const slides = document.querySelectorAll('.cs-slide');
             const total = slides.length;
@@ -434,70 +406,59 @@
     <!--                   Footer                     -->
     <!-- ============================================ -->
 
-    <footer id="footer">
-        <div class="container">
-            <div class="left-section">
-                <a class="logo" href="/"><img loading="lazy" decoding="async" src="/assets/images/logo-light.png"
-                        alt="logo" width="264" height="78"></a>
-                <p>
-                    Extra content if you need it, if not you can delete this whole p tag. I usually do.
-                </p>
-            </div>
-            <div class="right-section">
-                <div class="lists">
-                    <ul>
-                        <li>
-                            <h2>Information</h2>
-                        </li>
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="/about">About Us</a>
-                        </li>
-                        <li>
-                            <a href="/projects">Projects</a>
-                        </li>
-                        <li>
-                            <a href="/testimonials">Reviews</a>
-                        </li>
-                        <li>
-                            <a href="/contact">Contact</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <h2>Services</h2>
-                        </li>
-                        <li>Service1</li>
-                        <li>Service2</li>
-                        <li>Service4</li>
-                        <li>Service5</li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <h2>Contact</h2>
-                        </li>
-                        <li>
-                            <a href="/contact">First Address Line<br>Denver CO 80206</a>
-                        </li>
-                        <li>
-                            <a href="tel:555-779-4407">T: (555) 779-4407</a>
-                        </li>
-                        <li>
-                            <a href="mailto:email@email.com">Click to Email</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+   <footer id="footer">
+    <div class="footer-container">
+
+        <!-- LEFT SECTION -->
+        <div class="footer-left">
+            <a class="footer-logo" href="/">
+                <img src="assets/images/facebook-logo.webp" alt="West GA Business Showcase">
+            </a>
+
+            <p class="footer-desc">
+                Connecting residents with trusted businesses across West Georgia — Coweta, Carroll, Troup, Fayette & beyond.
+            </p>
         </div>
 
-        <div class="credit">
-            <span>Designed and Hand Coded by</span>
-            <a href="" target="_blank" rel="noopener">Your Company Name</a>
-            <span class="copyright"> Copyright 2021 - Present</span>
+        <!-- RIGHT SECTION -->
+        <div class="footer-right">
+
+            <ul class="footer-list">
+                <li><h2>Explore</h2></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/region">Region</a></li>
+                <li><a href="/directory">Directory</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/get-featured">Get Featured</a></li>
+            </ul>
+
+            <ul class="footer-list">
+                <li><h2>Resources</h2></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/advertise">Advertise</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms & Conditions</a></li>
+            </ul>
+
+            <ul class="footer-list">
+                <li><h2>Contact</h2></li>
+                <li><a href="/contact">Newnan, GA 30263</a></li>
+                <li><a href="tel:7703765421">(770) 376‑5421</a></li>
+                <li><a href="mailto:info@westgabusiness.com">info@westgabusiness.com</a></li>
+            </ul>
+
         </div>
-    </footer>
+    </div>
+
+    <!-- CREDIT BAR -->
+    <div class="footer-credit">
+        <span>© 2026 West GA Business Showcase</span>
+        <span>•</span>
+        <span>Designed by CopilotWebDesigns</span>
+    </div>
+</footer>
+
 
     <script defer src="/assets/js/nav.js"></script>
     <script defer src="/assets/js/dark.js"></script>
