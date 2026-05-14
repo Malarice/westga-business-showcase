@@ -424,4 +424,5 @@ Setup up is easy.
 5. Find "registration preferences" and click "edit settings" and set registration from public to invite only
 6. Find "enable providers" and add a provider. I choose Google so the client can login with google in 1 click.
 7. Find "Git Gateway" and enable it#   w e s t g a - b u s i n e s s - s h o w c a s e  
+ #   u n i v e r s a l - s e a r c h - a p i  
  
