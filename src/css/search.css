@@ -1,0 +1,16 @@
+#searchInput {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 1.1rem;
+  background: var(--bg-light);
+  color: var(--text);
+  outline: none;
+  box-shadow: var(--shadow);
+}
+
+#searchInput::placeholder {
+  color: var(--text-muted);
+}
+

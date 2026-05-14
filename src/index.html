@@ -1,490 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--Swap our for actual link-->
-    <link rel="canonical" href="https://www.website.com/">
-
-    <meta name="description" content="Meta description for the page">
-    <meta name="keywords" content="">
-
-    <!--Social Media Display-->
-    <meta property="og:title" content="Title that shows up on google searches" />
-    <meta property="og:description" content="Meta description for the page" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.website.com/" />
-    <meta property="og:image" content="/images/social.jpg" />
-    <meta property="og:image:secure_url" content="/images/social.jpg" />
-
-    <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v1">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/assets/favicons/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Preload -->
-    <link rel="preload" as="image" href="/assets/logo-light.png">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+    <title>Universal Lookup Engine</title>
 
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/critical.css">
+    <link rel="stylesheet" href="/css/cards.css">
 
-    <link rel="preload" as="image" href="/images/landing-1920w.webp" />
-
-    <!-- Loading in page specific CSS sheets from css block -->
-    <link rel="stylesheet" href="/css/critical.css" />
-    <link rel="stylesheet" href="/css/local.css">
-    <script type="text/javascript" src="node_modules/accessibility/dist/main.bundle.js"></script>
-
-    <!--Put analytics tag here at the bottom to prevent it from render blocking-->
-
-    <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
-    <title>
-
-        West Georgia Business Showcase | Pixel Perfect Websites | Denver, CO
-
-    </title>
 </head>
 
 <body>
-    <script type="text/javascript">
-        window.addEventListener('load', function () {
-            new Accessibility();
-        }, false);
 
-    </script>
-
-
-    <!--Screen reader skip main nav-->
-    <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
-    <!-- ============================================ -->
-    <!--                 Navigation                   -->
-    <!-- ============================================ -->
-
-<header id="cs-navigation">
-    <div class="cs-container">
-
-        <!-- Logo -->
-        <a href="/" class="cs-logo" aria-label="Return to Coweta Business Showcase Home page">
-            <img src="assets/images/west-ga-logo.png" alt="West Georgia Business Showcase" decoding="async">
-        </a>
-
-        <!-- Mini Weather (fixed + aligned) -->
-        <div class="cs-weather-mini">
-            <span class="cs-weather-icon">⛅</span>
-            <span class="cs-weather-temp">--°F</span>
-        </div>
-
-<script>
-async function updateWeather() {
-    try {
-        // Newnan, GA coordinates
-        const lat = 33.3807;
-        const lon = -84.7997;
-
-        // Force Fahrenheit with temperature_unit=fahrenheit
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=fahrenheit`;
-
-        const response = await fetch(url);
-        const data = await response.json();
-
-        const temp = Math.round(data.current_weather.temperature);
-
-        document.querySelector(".cs-weather-temp").textContent = temp + "°F";
-    } catch (e) {
-        console.log("Weather error:", e);
-    }
-}
-
-// Run immediately
-updateWeather();
-
-// Update every 10 minutes
-setInterval(updateWeather, 600000);
-</script>
-
-
-
-            <!-- Navigation -->
-            <nav class="cs-nav" aria-label="main navigation">
-
-                <!-- Mobile Toggle -->
-                <button class="cs-toggle" aria-label="mobile menu toggle" aria-expanded="false"
-                    aria-controls="cs-ul-wrapper" aria-haspopup="menu">
-                    <span class="cs-box" aria-hidden="true">
-                        <span class="cs-line cs-line1"></span>
-                        <span class="cs-line cs-line2"></span>
-                        <span class="cs-line cs-line3"></span>
-                    </span>
-                </button>
-
-                <div class="cs-ul-wrapper" id="cs-ul-wrapper">
-                    <ul class="cs-ul">
-
-                        <li class="cs-li">
-                            <a href="/" class="cs-li-link cs-active">Home</a>
-                        </li>
-
-                        <!-- Region Dropdown -->
-                        <li class="cs-li cs-dropdown">
-                            <button class="cs-li-link cs-dropdown-toggle" aria-haspopup="menu" aria-expanded="false"
-                                id="counties-dropdown-toggle">
-                                Region
-                                <img class="cs-drop-icon"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt=""
-                                    width="15" height="15" decoding="async">
-                            </button>
-
-                            <ul class="cs-drop-ul" aria-labelledby="counties-dropdown-toggle">
-                                <li class="cs-drop-li"><a href="/coweta/" class="cs-li-link cs-drop-link">Coweta
-                                        County</a></li>
-                                <li class="cs-drop-li"><a href="/fayette/" class="cs-li-link cs-drop-link">Fayette
-                                        County</a></li>
-                                <li class="cs-drop-li"><a href="/carroll/" class="cs-li-link cs-drop-link">Carroll
-                                        County</a></li>
-                                <li class="cs-drop-li"><a href="/douglas/" class="cs-li-link cs-drop-link">Douglas
-                                        County</a></li>
-                                <li class="cs-drop-li"><a href="/troup/" class="cs-li-link cs-drop-link">Troup
-                                        County</a></li>
-                                <!-- <li class="cs-drop-li"><a href="/west-ga/" class="cs-li-link cs-drop-link">West GA
-                                        (All)</a></li> -->
-                            </ul>
-                        </li>
-
-
-                        <!-- Directory Dropdown -->
-                        <li class="cs-li cs-dropdown">
-                            <button class="cs-li-link cs-dropdown-toggle" aria-haspopup="menu" aria-expanded="false"
-                                id="directory-dropdown-toggle">
-                                Directory
-                                <img class="cs-drop-icon"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt=""
-                                    width="15" height="15" decoding="async">
-                            </button>
-
-                            <ul class="cs-drop-ul" aria-labelledby="directory-dropdown-toggle">
-
-                                <!-- County Directories -->
-                                <li class="cs-drop-li"><a href="/coweta-directory/"
-                                        class="cs-li-link cs-drop-link">Coweta County Directory</a></li>
-                                <li class="cs-drop-li"><a href="/carroll-directory/"
-                                        class="cs-li-link cs-drop-link">Carroll County Directory</a></li>
-                                <li class="cs-drop-li"><a href="/douglas-directory/"
-                                        class="cs-li-link cs-drop-link">Douglas County Directory</a></li>
-                                <li class="cs-drop-li"><a href="/fayette-directory/"
-                                        class="cs-li-link cs-drop-link">Fayette County Directory</a></li>
-                                <li class="cs-drop-li"><a href="/troup-directory/" class="cs-li-link cs-drop-link">Troup
-                                        County Directory</a></li>
-
-                            </ul>
-                        </li>
-
-                        <!-- Events Dropdown -->
-                        <li class="cs-li cs-dropdown">
-                            <button class="cs-li-link cs-dropdown-toggle" aria-haspopup="menu" aria-expanded="false"
-                                id="events-dropdown-toggle">
-                                Events
-                                <img class="cs-drop-icon"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt=""
-                                    width="15" height="15" decoding="async">
-                            </button>
-
-                            <!-- County Events -->
-                            <ul class="cs-drop-ul" aria-labelledby="events-dropdown-toggle">
-                                <li class="cs-drop-li"><a href="/coweta-events/" class="cs-li-link cs-drop-link">Coweta
-                                        County Events</a></li>
-                                <li class="cs-drop-li"><a href="/carroll-events/"
-                                        class="cs-li-link cs-drop-link">Carroll County Events</a></li>
-                                <li class="cs-drop-li"><a href="/douglas-events/"
-                                        class="cs-li-link cs-drop-link">Douglas County Events</a></li>
-                                <li class="cs-drop-li"><a href="/fayette-events/"
-                                        class="cs-li-link cs-drop-link">Fayette County Events</a></li>
-                                <li class="cs-drop-li"><a href="/troup-events/" class="cs-li-link cs-drop-link">Troup
-                                        County Events</a></li>
-
-                            </ul>
-                        </li>
-
-
-                        <!-- 
-                        <li class="cs-li">
-                            <a href="/spotlights/" class="cs-li-link">Spotlights</a>
-                        </li> -->
-
-
-
-                        <li class="cs-li">
-                            <a href="/get-featured/" class="cs-li-link cs-featured-btn">Get Featured</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-
-            <!-- Optional Contact + Social -->
-            <div class="cs-contact-group">
-                <a href="tel:+1-555-555-5555" class="cs-phone">
-                    <img class="cs-phone-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-1a.svg"
-                        alt="" width="24" height="24" decoding="async">
-                    (770) 376‑5421
-                </a>
-
-                <div class="cs-social">
-                    <a href="https://www.facebook.com/profile.php?id=61567431890168" class="cs-social-link" aria-label="Facebook">
-                        <img class="cs-social-icon"
-                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/facebook-1a.svg" width="12"
-                            height="12">
-                    </a>
-                    <a href="#" class="cs-social-link" aria-label="Instagram">
-                        <img class="cs-social-icon"
-                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/instagram1a.svg" width="12"
-                            height="12">
-                    </a>
-                </div>
-            </div>
-            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-            <button id="dark-mode-toggle" aria-label="dark mode toggle" aria-pressed="false">
-                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"
-                    style="enable-background:new 0 0 480 480" xml:space="preserve" aria-hidden="true">
-                    <path
-                        d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z" />
-                </svg>
-                <img class="cs-sun" aria-hidden="true"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt=""
-                    width="15" height="15">
-            </button>
-        </div>
+    <header class="minimal-header">
+        <h1>Universal Lookup Engine</h1>
+        <p>Search any dataset instantly</p>
     </header>
 
+    <section class="search-section">
+        <input id="searchInput" placeholder="Search your data..." />
+    </section>
 
-    <main id="main"><!-- Enter html code below -->
+    <section id="results" class="results-grid">
+        <!-- Cards will be injected here -->
+    </section>
 
+    <script src="/js/search.js"></script>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+    <script>
+  const toggle = document.getElementById("themeToggle");
+  const root = document.documentElement;
 
-  <section id="cs-hero-search">
-    <div class="cs-container">
+  // Load saved theme
+  const saved = localStorage.getItem("theme");
+  if (saved) root.setAttribute("data-theme", saved);
 
-        <h1 class="cs-hero-title">
-            Discover West Georgia Businesses
-        </h1>
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+    root.setAttribute("data-theme", current);
+    localStorage.setItem("theme", current);
 
-        <p class="cs-hero-subtitle">
-            Search local shops, services, events, and more across Coweta & surrounding counties.
-        </p>
-
-      <form id="searchForm" class="cs-search-form">
-    <input 
-        id="searchInput"
-        type="text" 
-        name="q" 
-        class="cs-search-input" 
-        placeholder="Search for a business, service, or category..."
-    >
-    <button class="cs-search-btn" aria-label="Search">
-        🔍
-    </button>
-</form>
-<script>
-  const form = document.getElementById("searchForm");
-  const input = document.getElementById("searchInput");
-  const resultsDiv = document.getElementById("results");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // stop page reload
-
-    const q = input.value.trim();
-    if (!q) return;
-
-    const res = await fetch(`/.netlify/functions/search?q=${encodeURIComponent(q)}`);
-    const data = await res.json();
-
-    resultsDiv.innerHTML = data.results
-      .map(biz => `
-        <div class="biz-card">
-          <h3>${biz.name}</h3>
-          <p>${biz.category}</p>
-          <p>${biz.city}</p>
-        </div>
-      `)
-      .join("");
+    toggle.textContent = current === "light" ? "☀️" : "🌙";
   });
 </script>
 
-<div id="results"></div>
-
-
-    </div>
-</section>
-
-
-
-                                
-
-                                
-                                
-        <script>
-            const slides = document.querySelectorAll('.cs-slide');
-            const total = slides.length;
-
-            // Start on a random slide
-            let current = Math.floor(Math.random() * total);
-
-            // Show that random slide immediately
-            function showSlide(index) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                slides[index].classList.add('active');
-            }
-
-            showSlide(current);
-
-            // Next slide
-            function nextSlide() {
-                current = (current + 1) % total;
-                showSlide(current);
-            }
-
-            // Previous slide
-            function prevSlide() {
-                current = (current - 1 + total) % total;
-                showSlide(current);
-            }
-
-            // Arrow click events
-            document.querySelector('.cs-next').addEventListener('click', () => {
-                nextSlide();
-                resetAuto();
-            });
-
-            document.querySelector('.cs-prev').addEventListener('click', () => {
-                prevSlide();
-                resetAuto();
-            });
-
-            // Auto-rotation
-            let autoPlay;
-
-            function startAuto() {
-                autoPlay = setInterval(nextSlide, 8000);
-            }
-
-            function resetAuto() {
-                clearInterval(autoPlay);
-                startAuto();
-            }
-
-            startAuto();
-        </script>
-
-
-
-
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        <script>
-            if (window.netlifyIdentity) {
-                window
-                    .netlifyIdentity
-                    .on('init', (user) => {
-                        if (!user) {
-                            window
-                                .netlifyIdentity
-                                .on('login', () => {
-                                    document.location.href = '/admin/';
-                                });
-                        }
-                    });
-            }
-        </script>
-    </main>
-
-    <!-- ============================================ -->
-    <!--                   Footer                     -->
-    <!-- ============================================ -->
-
-   <footer id="footer">
-    <div class="footer-container">
-
-        <!-- LEFT SECTION -->
-        <div class="footer-left">
-            <a class="footer-logo" href="/">
-                <img src="assets/images/facebook-logo.webp" alt="West GA Business Showcase">
-            </a>
-
-            <p class="footer-desc">
-                Connecting residents with trusted businesses across West Georgia — Coweta, Carroll, Troup, Fayette & beyond.
-            </p>
-        </div>
-
-        <!-- RIGHT SECTION -->
-        <div class="footer-right">
-
-            <ul class="footer-list">
-                <li><h2>Explore</h2></li>
-                <li><a href="/">Home</a></li>
-                <li><a href="/region">Region</a></li>
-                <li><a href="/directory">Directory</a></li>
-                <li><a href="/events">Events</a></li>
-                <li><a href="/get-featured">Get Featured</a></li>
-            </ul>
-
-            <ul class="footer-list">
-                <li><h2>Resources</h2></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/advertise">Advertise</a></li>
-                <li><a href="/faq">FAQ</a></li>
-                <li><a href="/privacy">Privacy Policy</a></li>
-                <li><a href="/terms">Terms & Conditions</a></li>
-            </ul>
-
-            <ul class="footer-list">
-                <li><h2>Contact</h2></li>
-                <li><a href="/contact">Newnan, GA 30263</a></li>
-                <li><a href="tel:7703765421">(770) 376‑5421</a></li>
-                <li><a href="mailto:info@westgabusiness.com">info@westgabusiness.com</a></li>
-            </ul>
-
-        </div>
-    </div>
-
-    <!-- CREDIT BAR -->
-    <div class="footer-credit">
-        <span>© 2026 West GA Business Showcase</span>
-        <span>•</span>
-        <span>Designed by CopilotWebDesigns</span>
-    </div>
-</footer>
-
-
-    <script defer src="/assets/js/nav.js"></script>
-    <script defer src="/assets/js/dark.js"></script>
-
-    <!--
-        This script adds a class to the body after scrolling 100px
-        and we used these body.scroll styles to create some on scroll 
-        animations with the navbar
-    -->
-    <script defer>
-        document.addEventListener('scroll', (e) => {
-            const scroll = document.documentElement.scrollTop;
-            if (scroll >= 100) {
-                document
-                    .querySelector('body')
-                    .classList
-                    .add('scroll')
-            } else {
-                document
-                    .querySelector('body')
-                    .classList
-                    .remove('scroll')
-            }
-        });
-    </script>
 
 </body>
+</html>
+
+
 
 </html>
